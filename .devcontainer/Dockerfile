@@ -1,4 +1,4 @@
-FROM node:18
+FROM node:20-slim
 
 RUN apt-get update && apt-get install -y \
     curl unzip zip git postgresql-client \
@@ -7,6 +7,12 @@ RUN apt-get update && apt-get install -y \
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
     && unzip awscliv2.zip \
     && ./aws/install
+
+# nest CLI をグローバルインストール
+RUN npm install -g @nestjs/cli
+
+# React, Vite を使うなら vite もあって良い（任意）
+RUN npm install -g create-vite
 
 RUN corepack enable && npm install -g aws-cdk
 
