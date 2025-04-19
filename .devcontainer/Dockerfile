@@ -11,9 +11,6 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
 # nest CLI をグローバルインストール
 RUN npm install -g @nestjs/cli
 
-# React, Vite を使うなら vite もあって良い（任意）
-RUN npm install -g create-vite
-
 RUN corepack enable && npm install -g aws-cdk
 
 WORKDIR /workspace
