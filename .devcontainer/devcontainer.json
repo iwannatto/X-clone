@@ -12,5 +12,6 @@
           "amazonwebservices.aws-toolkit-vscode"
         ]
       }
-    }
+    },
+    "forwardPorts": [3010, 3011]
   }

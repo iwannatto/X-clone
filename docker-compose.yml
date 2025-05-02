@@ -9,8 +9,8 @@ services:
     working_dir: /workspace
     command: sleep infinity
     ports:
-      - "3000:3000" # frontend
-      - "3001:3001" # backend
+      - "3010:3010" # frontend
+      - "3011:3011" # backend
   db:
     image: postgres:14
     restart: always
