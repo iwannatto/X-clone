@@ -1,16 +1,18 @@
-import { useEffect, useState } from "react";
+import { useGetHello } from "./api";
 import "./App.css";
 
 function App() {
-  const [msg, setMsg] = useState("");
+  const { message, error } = useGetHello(); // カスタムフックを呼び出し
 
-  useEffect(() => {
-    fetch("http://localhost:3011/")
-      .then((res) => res.text())
-      .then(setMsg);
-  }, []);
+  if (error) {
+    return <div>{error}</div>; // エラーがあれば表示
+  }
 
-  return <h1>{msg || "Loading..."}</h1>;
+  if (!message) {
+    return <div>Loading...</div>; // メッセージがまだない場合（ロード中）
+  }
+
+  return <div>{message}</div>; // メッセージを表示
 }
 
 export default App;
