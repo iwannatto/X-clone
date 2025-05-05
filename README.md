@@ -22,7 +22,6 @@ migrate のやり方：
 
 # TODO
 
-- CreateUserDto の swagger 上の型定義
 - backend のほうは delete 余分な space の赤線が出てても Ctrl+S しても治らない フロントは治る ここの gap を埋めたい
 - Lambda 化
 - user 認証
