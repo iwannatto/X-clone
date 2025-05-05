@@ -1,5 +1,9 @@
 devcontainer を使っている
 
+# 初回起動時
+
+db の初期化が必要なはず
+
 # コミット前
 
 `npm run gen`で API をバックエンド-フロントエンド間で同期する
@@ -11,11 +15,15 @@ devcontainer で開く
 `npm run dev`  
 http://localhost:3010/ で Hello World
 
+# Backend
+
+migrate のやり方：  
+`npm run migrate:dev -- <name>`
+
 # TODO
 
-- postgres のパスワード
+- CreateUserDto の swagger 上の型定義
 - backend のほうは delete 余分な space の赤線が出てても Ctrl+S しても治らない フロントは治る ここの gap を埋めたい
-- Prisma
 - Lambda 化
-- user 作り
+- user 認証
 - follow 機能

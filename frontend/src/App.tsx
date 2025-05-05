@@ -1,18 +1,28 @@
 import { useGetHello } from "./api";
 import "./App.css";
+import { CreateUserForm } from "./components/CreateUserForm";
 
-function App() {
-  const { message, error } = useGetHello(); // カスタムフックを呼び出し
+function Hello() {
+  const result = useGetHello(); // カスタムフックを呼び出し
 
-  if (error) {
-    return <div>{error}</div>; // エラーがあれば表示
-  }
-
-  if (!message) {
+  if (!result) {
     return <div>Loading...</div>; // メッセージがまだない場合（ロード中）
   }
 
-  return <div>{message}</div>; // メッセージを表示
+  if (!result.success) {
+    return <div>{result.error.message}</div>; // エラーがあれば表示
+  }
+
+  return <div>{result.data}</div>; // メッセージを表示
+}
+
+function App() {
+  return (
+    <>
+      <Hello />
+      <CreateUserForm />
+    </>
+  ); // Hello コンポーネントを表示
 }
 
 export default App;
