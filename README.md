@@ -20,9 +20,12 @@ http://localhost:3010/ で Hello World
 migrate のやり方：  
 `npm run migrate:dev -- <name>`
 
+# VSCode
+
+settings.sample.json を.vscode/settings.json にコピー（既にあるならうまいことマージ）すると frontend/backend にちゃんと eslint があたる
+
 # TODO
 
-- backend のほうは delete 余分な space の赤線が出てても Ctrl+S しても治らない フロントは治る ここの gap を埋めたい
 - Lambda 化
 - user 認証
 - follow 機能
