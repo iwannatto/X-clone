@@ -1,17 +1,23 @@
 {
-    "name": "X-clone",
-    "dockerComposeFile": "../docker-compose.yml",
-    "service": "dev",
-    "workspaceFolder": "/workspace",
-    "postCreateCommand": "corepack enable && npm install -g aws-cdk",
-    "customizations": {
-      "vscode": {
-        "extensions": [
-          "dbaeumer.vscode-eslint",
-          "esbenp.prettier-vscode",
-          "amazonwebservices.aws-toolkit-vscode"
-        ]
-      }
-    },
-    "forwardPorts": [3010, 3011]
+  "name": "X-clone",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "dev",
+  "workspaceFolder": "/workspace",
+  "postCreateCommand": "corepack enable && npm install -g aws-cdk",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "amazonwebservices.aws-toolkit-vscode"
+      ]
+    }
+  },
+  "forwardPorts": [3010, 3011],
+  "mounts": [
+    "source=${env:HOME}/.aws,target=/root/.aws,type=bind"
+  ],
+  "remoteEnv": {
+    "AWS_PROFILE": "default"
   }
+}

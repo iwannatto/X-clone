@@ -11,7 +11,9 @@
     "generate:client": "npx openapi-typescript-codegen --input ../shared/api-spec.json --output ../shared/api-client --client axios"
   },
   "dependencies": {
+    "aws-cdk-lib": "^2.195.0",
     "axios": "^1.9.0",
+    "constructs": "^10.4.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

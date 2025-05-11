@@ -2,7 +2,9 @@
   "scripts": {
     "install": "npm --prefix backend install && npm --prefix frontend install",
     "gen": "npm --prefix backend run generate:swagger && npm --prefix frontend run generate:client",
-    "dev": "npm run install && npm run gen && concurrently \"npm --prefix backend run start:dev\" \"npm --prefix frontend run dev\""
+    "dev": "npm run install && npm run gen && concurrently \"npm --prefix backend run start:dev\" \"npm --prefix frontend run dev\"",
+    "build:frontend": "npm --prefix shared/api-client install && npm --prefix frontend run build",
+    "deploy:frontend": "npm run build:frontend && npm --prefix infra run cdk -- deploy --all"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"

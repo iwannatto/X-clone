@@ -26,6 +26,8 @@ settings.sample.json を.vscode/settings.json にコピー（既にあるなら�
 
 # TODO
 
+- frontend、料金制限
 - Lambda 化
+- frontend と backend の繋ぎ込み
 - user 認証
 - follow 機能
